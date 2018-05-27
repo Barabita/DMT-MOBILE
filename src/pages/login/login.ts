@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {TabsPage} from "../tabs/tabs";
+import {UtilProvider} from "../../providers/util/util";
 
 /**
  * Generated class for the LoginPage page.
@@ -15,11 +17,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  userCode: string;
+  password: string;
+
+  constructor(public navCtrl: NavController, private  util: UtilProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  login() {
+    if (this.userCode == "admin" && this.password == "adm123") {
+      this.navCtrl.push(TabsPage);
+    } else {
+      this.util.message("Kullanıcı Adı  yada Şifre hatalı. Tekrar giriş yapmayı deneyin.")
+    }
   }
 
 }

@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button primary menuToggle>
+      <ion-icon name="list"></ion-icon>
+    </button>
+    <ion-title class="page-title">Mesajlar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngFor="let mesaj of mesajList" (click)="mesajDetayinaGit($event, mesaj.id)">
+    <p>
+      <label>
+        <i class="fas fa-user"></i> <strong> {{mesaj.gonderen}} </strong>
+      </label>
+    </p>
+    <p>
+      <label>
+        <i class="fas fa-envelope"></i> <strong>{{mesaj.subject}} </strong>
+      </label>
+    </p>
+  </ion-card>
+</ion-content>
+
+
+<ion-footer>
+
+  <ion-item>
+
+  </ion-item>
+
+
+</ion-footer>

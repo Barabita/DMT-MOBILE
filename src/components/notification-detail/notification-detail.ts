@@ -17,7 +17,7 @@ export class NotificationDetailComponent {
   notification: Notification;
 
   constructor(params: NavParams, private  viewCtrl: ViewController) {
-    this.notification = params.data.list.data;
+    this.notification = params.data.data;
   }
 
   closeModal() {

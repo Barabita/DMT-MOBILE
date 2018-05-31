@@ -1,13 +1,10 @@
-<!--
-  Generated template for the MessagePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Message</ion-title>
+    <button ion-button primary menuToggle>
+      <ion-icon name="list"></ion-icon>
+    </button>
+    <ion-title class="page-title">Mesajlar</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +12,26 @@
 
 <ion-content padding>
 
+  <ion-card *ngFor="let mesaj of messageList" (click)="detayaGit($event, mesaj)">
+    <p>
+      <label>
+        <i class="fas fa-user"></i> <strong> {{mesaj.instructorName}} {{mesaj.instructorSurname}} </strong>
+      </label>
+    </p>
+    <p>
+      <label>
+        <i class="fas fa-envelope"></i> <strong>{{mesaj.lectureCode}} {{mesaj.lectureName}} </strong>
+      </label>
+    </p>
+  </ion-card>
 </ion-content>
+
+
+<ion-footer>
+
+  <ion-item>
+
+  </ion-item>
+
+
+</ion-footer>

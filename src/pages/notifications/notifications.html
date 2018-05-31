@@ -12,15 +12,15 @@
 
 <ion-content padding>
 
-  <ion-card *ngFor="let mesaj of mesajList" (click)="mesajDetayinaGit($event, mesaj.id)">
+  <ion-card *ngFor="let mesaj of notificationList" (click)="detayaGit($event, mesaj)">
     <p>
       <label>
-        <i class="fas fa-user"></i> <strong> {{mesaj.gonderen}} </strong>
+        <i class="fas fa-user"></i> <strong> {{mesaj.sender}} </strong>
       </label>
     </p>
     <p>
       <label>
-        <i class="fas fa-envelope"></i> <strong>{{mesaj.subject}} </strong>
+        <i class="fas fa-envelope"></i> <strong>{{mesaj.title}} </strong>
       </label>
     </p>
   </ion-card>

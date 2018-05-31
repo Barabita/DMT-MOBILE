@@ -16,6 +16,8 @@ import {ApiProvider} from '../providers/api/api';
 import {MessagePage} from "../pages/message/message";
 import {NotificationsPage} from "../pages/notifications/notifications";
 import {HttpClientModule} from "@angular/common/http";
+import {MessageDetailComponent} from "../components/message-detail/message-detail";
+import {NotificationDetailComponent} from "../components/notification-detail/notification-detail";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {HttpClientModule} from "@angular/common/http";
     TabsPage,
     LoginPage,
     MessagePage,
-    NotificationsPage
+    NotificationsPage,
+    MessageDetailComponent,
+    NotificationDetailComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
@@ -41,7 +45,9 @@ import {HttpClientModule} from "@angular/common/http";
     TabsPage,
     LoginPage,
     MessagePage,
-    NotificationsPage
+    NotificationsPage,
+    MessageDetailComponent,
+    NotificationDetailComponent
   ],
   providers: [
     StatusBar,

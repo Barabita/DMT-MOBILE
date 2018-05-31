@@ -36,14 +36,14 @@ export class ApiProvider {
   }
 
   async getMessages(): Promise<any> {
-    let data = await this.http.get(this.messageUrl, {headers: this.header}).toPromise();
+    let data = await this.http.get(this.messageUrl).toPromise();
     return new Promise((resolve, reject) => {
       resolve(data);
     })
   }
 
   async getNotifications(): Promise<any> {
-    let data = await this.http.get(this.notificationUrl, {headers: this.header, withCredentials: true}).toPromise();
+    let data = await this.http.get(this.notificationUrl).toPromise();
     return new Promise((resolve, reject) => {
       resolve(data);
     })

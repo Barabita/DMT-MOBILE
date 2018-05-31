@@ -19,7 +19,7 @@ export class MessageDetailComponent {
 
   constructor(params: NavParams, private  viewCtrl: ViewController) {
 
-    this.mesaj = params.data.list.data;
+    this.mesaj = params.data.data;
   }
 
   closeModal() {

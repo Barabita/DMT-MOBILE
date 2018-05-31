@@ -22,8 +22,13 @@ export class LoginPage {
   }
 
   async login() {
-    let user = await this.api.login(this.userCode, this.password);
-    if (this.userCode == "admin" && this.password == "adm123") {
+    let userList = await this.api.login(this.userCode, this.password);
+    let user;
+    if (userList.length > 0) {
+      user = userList[0];
+    }
+    if (user != null && this.userCode == user.email && this.password == user.password) {
+      localStorage.setItem("user", JSON.stringify(user));
       this.navCtrl.push(TabsPage);
     } else {
       this.util.message("Kullanıcı Adı  yada Şifre hatalı. Tekrar giriş yapmayı deneyin.")

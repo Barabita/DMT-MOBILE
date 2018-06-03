@@ -1,0 +1,58 @@
+<ion-header style="text-align: center">
+
+  <ion-navbar>
+    <button ion-button primary menuToggle>
+      <ion-icon name="list"></ion-icon>
+    </button>
+    <ion-title class="page-title">Credits</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <p>
+        <label>
+          <i class="fas fa-book"></i> <strong> Total Credit: {{user.creditWill}}</strong>
+        </label>
+      </p>
+      <p>
+        <label>
+          <i class="fas fa-book"></i> <strong> Previous Credits: {{user.creditGot}}</strong>
+        </label>
+      </p>
+    </ion-card-header>
+
+    <p>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <strong> Lecture </strong>
+          </ion-col>
+          <ion-col>
+            <strong> Credit </strong>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let grade of gradeList">
+          <ion-col>
+            {{grade.lecture}}
+          </ion-col>
+          <ion-col>
+            {{grade.credit}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <strong> Total(This Term) </strong>
+          </ion-col>
+          <ion-col>
+            <strong> {{totalCredit}} </strong>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </p>
+  </ion-card>
+</ion-content>
+

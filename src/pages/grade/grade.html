@@ -1,0 +1,53 @@
+<ion-header style="text-align: center">
+
+  <ion-navbar>
+    <button ion-button primary menuToggle>
+      <ion-icon name="list"></ion-icon>
+    </button>
+    <ion-title class="page-title">Grades</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let grade of gradeList">
+    <p>
+      <label>
+        <i class="fas fa-book"></i> <strong> {{grade.lecture}}</strong>
+      </label>
+    </p>
+    <p>
+      <label>
+        <i class="fas fa-user"></i> <strong>{{grade.instructor}} </strong>
+      </label>
+    </p>
+    <p>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            Visa 1
+          </ion-col>
+          <ion-col>
+            Visa 2
+          </ion-col>
+          <ion-col>
+            Final
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            {{grade.visa1}}
+          </ion-col>
+          <ion-col>
+            {{grade.visa2}}
+          </ion-col>
+          <ion-col>
+            {{grade.finalResult}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </p>
+  </ion-card>
+</ion-content>
+

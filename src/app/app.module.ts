@@ -18,6 +18,8 @@ import {NotificationsPage} from "../pages/notifications/notifications";
 import {HttpClientModule} from "@angular/common/http";
 import {MessageDetailComponent} from "../components/message-detail/message-detail";
 import {NotificationDetailComponent} from "../components/notification-detail/notification-detail";
+import {GradePage} from "../pages/grade/grade";
+import {CreditPage} from "../pages/credit/credit";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {NotificationDetailComponent} from "../components/notification-detail/not
     MessagePage,
     NotificationsPage,
     MessageDetailComponent,
-    NotificationDetailComponent
+    NotificationDetailComponent,
+    GradePage,CreditPage
   ],
   imports: [
     BrowserModule, HttpClientModule,
@@ -47,7 +50,9 @@ import {NotificationDetailComponent} from "../components/notification-detail/not
     MessagePage,
     NotificationsPage,
     MessageDetailComponent,
-    NotificationDetailComponent
+    NotificationDetailComponent,
+    GradePage,
+    CreditPage
   ],
   providers: [
     StatusBar,

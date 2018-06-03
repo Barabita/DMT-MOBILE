@@ -14,9 +14,10 @@ import {HttpHeaders} from "@angular/common/http";
 export class ApiProvider {
 
   private baseUrl: string = "http://localhost:8080/api/";
-  private messageUrl: string = this.baseUrl + "message/bessie@breece.com";
+  private messageUrl: string = this.baseUrl + "message/";
   private loginUrl: string = this.baseUrl + "login/";
-  private notificationUrl: string = this.baseUrl + "notification/regana@bristow.com";
+  private notificationUrl: string = this.baseUrl + "notification/";
+  private gradeUrl: string = this.baseUrl + "getNotes/";
   private header: HttpHeaders;
 
   constructor(public http: HttpClient) {
@@ -36,6 +37,7 @@ export class ApiProvider {
   }
 
   async getMessages(): Promise<any> {
+    this.messageUrl = this.messageUrl + localStorage.getItem("userCode");
     let data = await this.http.get(this.messageUrl).toPromise();
     return new Promise((resolve, reject) => {
       resolve(data);
@@ -43,11 +45,19 @@ export class ApiProvider {
   }
 
   async getNotifications(): Promise<any> {
+    this.notificationUrl = this.notificationUrl + localStorage.getItem("userCode");
     let data = await this.http.get(this.notificationUrl).toPromise();
     return new Promise((resolve, reject) => {
       resolve(data);
     })
   }
 
+  async getGrades(): Promise<any> {
+    this.gradeUrl = this.gradeUrl + localStorage.getItem("userId");
+    let data = await this.http.get(this.gradeUrl).toPromise();
+    return new Promise((resolve, reject) => {
+      resolve(data);
+    })
+  }
 
 }

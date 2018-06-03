@@ -11,8 +11,8 @@ import {ApiProvider} from "../../providers/api/api";
 })
 export class LoginPage {
 
-  userCode: string;
-  password: string;
+  userCode: string = "ali@sahin.com";
+  password: string = "adm123";
 
   constructor(public navCtrl: NavController, private  util: UtilProvider, private  api: ApiProvider) {
   }
@@ -29,6 +29,9 @@ export class LoginPage {
     }
     if (user != null && this.userCode == user.email && this.password == user.password) {
       localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("userCode", this.userCode);
+      localStorage.setItem("password", this.password);
+      localStorage.setItem("userId", user.id);
       this.navCtrl.push(TabsPage);
     } else {
       this.util.message("Kullanıcı Adı  yada Şifre hatalı. Tekrar giriş yapmayı deneyin.")
